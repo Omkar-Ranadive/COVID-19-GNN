@@ -83,8 +83,6 @@ def find_distances_state_based(ll_dict):
 		distances.append(avg_dist)
 		if index % 10000 == 0:
 			print("Processed {} edges!".format(index))
-	#
-
 
 	# Sanity check
 	assert len(distances) == len(edges), "Num of edges and distances are not the same"
@@ -271,6 +269,26 @@ def create_node_features_states():
 	return np.array(features)
 
 
+def filter_edges(edges, edge_weights, threshold):
+	'''
+
+	A functio to delete edges from a graph if the edge weights are below a certain threshold
+	Args:
+		edges (numpy array): An array containing the edge tuples
+		edge_weights: An array containing the weights associated with those edges
+		threshold (float): A float value determining the minimum edge weight
+
+	Returns:(numpy arrays)
+	Filtered edges and edge weights
+	'''
+
+	filtered_indices = np.where(edge_weights >= threshold)[0]
+	filtered_edges = edges[filtered_indices]
+	filtered__weights = edge_weights[filtered_indices]
+
+	return filtered_edges, filtered__weights
+
+
 def make_fc_graph():
 	'''
 	Functions assumes that edges, distances are already calculated
@@ -292,6 +310,9 @@ def make_fc_graph():
 
 	# Compute the edge weights
 	edge_weights = find_edge_weights(distances=distances, flight_counts=flights, normalize_data=True)
+
+	# Filter the edges if needed
+	edges, edge_weights = filter_edges(np.array(edges), edge_weights, threshold=0.1)
 
 	edge_index = torch.tensor(edges, dtype=torch.long)
 

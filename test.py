@@ -3,7 +3,7 @@ import torch.nn.functional as F
 from src.model_architecture import Net
 from src.graph_loader import make_fc_graph
 from src.data_loader import load_pickle
-MODEL_PATH = 'models/m1_basic_epoch10000.pt'
+MODEL_PATH = 'models/m1_basic_epoch500.pt'
 lldict = load_pickle('dataset/generated/usa/lldict_usa')
 node_to_ss = load_pickle('dataset/generated/usa/node_to_ss')
 

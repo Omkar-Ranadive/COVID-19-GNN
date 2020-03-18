@@ -12,9 +12,9 @@ data = graph.to(device)
 
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=5e-4)
 model.train()
-num_epochs = 10000
+num_epochs = 50
 print_freq = 1000
-save_freq = 2500
+save_freq = 49
 train_losses, test_losses = [], []
 
 for epoch in range(num_epochs):
