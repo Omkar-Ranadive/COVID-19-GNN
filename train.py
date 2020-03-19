@@ -8,9 +8,13 @@ from src.utils import save_pickle, load_pickle
 from pathlib import Path
 import numpy as np
 from torch_geometric.data import InMemoryDataset, Data, DataLoader
-
+import os
 
 SOURCE_PATH = Path(__file__).parent
+# Make the models folder if it doesn't exists
+if not os.path.exists(SOURCE_PATH /'models'):
+    os.mkdir(SOURCE_PATH / 'models')
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print("Enter 1, 2 or 3.")
 print("1. Train using simple GCN Architecture: (Non-timeseries data): ")
