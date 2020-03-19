@@ -2,3 +2,5 @@ numpy
 pandas 
 geopy
 pyproj==2.5.0
+tqdm
+pip install plotly==4.5.4

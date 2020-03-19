@@ -1,3 +1,5 @@
+
+
 ## Installation 
 * Install pytorch from the [official site](https://pytorch.org/get-started/locally/)
 * Install pytorch-geometric by executing the following: 
@@ -9,5 +11,7 @@ pip install torch-geometric
 ```
 where ${CUDA} should be replaced by either cpu, cu92, cu100 or cu101 depending on your PyTorch installation.
 * Run `pip install -r requirements.txt`
-* Install basemap by downloading the appropriate wheel package [here](https://www.lfd.uci.edu/~gohlke/pythonlibs/#basemap)
+* Download basemap wheel package from [here](https://www.lfd.uci.edu/~gohlke/pythonlibs/#basemap)
+* Go the the directory where wheel package is downloaded and pip install the package 
+
 

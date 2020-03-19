@@ -2,35 +2,7 @@ import pandas as pd
 from geopy.geocoders import Nominatim
 import pickle
 import time
-
-
-def save_pickle(file, filename):
-    """
-
-    Args:
-        file: file to be saved
-        filename (str): path of the file to be saved
-
-    Returns:
-
-    """
-    with open(filename, 'wb') as f:
-        pickle.dump(file, f)
-
-
-def load_pickle(filename):
-    """
-
-    Args:
-        filename (str): name of the pickle file to be loaded
-
-    Returns:
-        file:
-
-    """
-    with open(filename, 'rb') as f:
-        file = pickle.load(f)
-    return file
+from src.utils import save_pickle, load_pickle
 
 
 def form_lldict(df, geo_run=False, val_provided=True):

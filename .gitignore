@@ -1,5 +1,6 @@
-dataset/data
-src/data_preparation.py
-src/model.py
+dataset/
 libraries/
 models/
+temp/
+processed/
+dataset.zip 
